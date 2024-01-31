@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.myapplication.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_createListingFragment"
+            app:destination="@id/createListingFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_myListingsFragment"
+            app:destination="@id/myListingsFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_viewListingsFragment"
+            app:destination="@id/viewListingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createListingFragment"
+        android:name="com.example.myapplication.CreateListingFragment"
+        android:label="fragment_create_listing"
+        tools:layout="@layout/fragment_create_listing" />
+    <fragment
+        android:id="@+id/myListingsFragment"
+        android:name="com.example.myapplication.MyListingsFragment"
+        android:label="fragment_my_listings"
+        tools:layout="@layout/fragment_my_listings" />
+    <fragment
+        android:id="@+id/viewListingsFragment"
+        android:name="com.example.myapplication.ViewListingsFragment"
+        android:label="fragment_view_listings"
+        tools:layout="@layout/fragment_view_listings" />
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.myapplication.CreateAccountFragment"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" />
+</navigation>
