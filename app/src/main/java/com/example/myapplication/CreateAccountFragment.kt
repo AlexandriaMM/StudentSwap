@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +38,21 @@ class CreateAccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_account, container, false)
+        val createAccountView = inflater.inflate(R.layout.fragment_create_account, container, false)
+        val bundle = Bundle()
+        bundle.putString("username", "password")
+        createAccountView.findViewById<Button>(R.id.createAccountButton).setOnClickListener(View.OnClickListener {
+                if (createAccountView.findViewById<EditText>(R.id.usernameField).text.toString() != "" &&
+                    createAccountView.findViewById<EditText>(R.id.emailField).text.toString() != "" &&
+                    createAccountView.findViewById<EditText>(R.id.passwordField).text.toString() != "" &&
+                    createAccountView.findViewById<EditText>(R.id.confirmPasswordField).text.toString() != "") {
+                    Navigation.findNavController(createAccountView).navigate(R.id.loginFragment)
+                    }
+                else {
+                    Toast.makeText(context, "Please fill out all fields", Toast.LENGTH_SHORT).show()
+                }
+            })
+        return createAccountView
     }
 
     companion object {
