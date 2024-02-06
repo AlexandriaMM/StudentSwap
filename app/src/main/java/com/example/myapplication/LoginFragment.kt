@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +39,26 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+
+        val loginView = inflater.inflate(R.layout.fragment_login, container, false)
+        val bundle = Bundle()
+        bundle.putString("username", "password")
+        loginView.findViewById<Button>(R.id.loginButton).setOnClickListener(View.OnClickListener {
+            if(loginView.findViewById<EditText>(R.id.usernameText).text.toString() != null &&
+                loginView.findViewById<EditText>(R.id.passwordText).text.toString() != null) {
+                Navigation.findNavController(loginView).navigate(R.id.mainMenuFragment, bundle)
+            }
+            else {
+                Toast.makeText(context, "Please enter a username and password", Toast.LENGTH_SHORT).show()
+            }
+        })
+        loginView.findViewById<Button>(R.id.newAccountButton).setOnClickListener(View.OnClickListener {
+            Navigation.findNavController(loginView).navigate(R.id.createAccountFragment)
+        })
+
+
+
+        return loginView
     }
 
     companion object {
