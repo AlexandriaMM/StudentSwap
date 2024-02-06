@@ -25,22 +25,22 @@
 
         <EditText
             android:id="@+id/usernameText"
-            android:layout_width="259dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="240dp"
+            android:layout_width="263dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="48dp"
             android:ems="10"
             android:hint="Username"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.519"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <Button
             android:id="@+id/loginButton"
             android:layout_width="209dp"
             android:layout_height="49dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="60dp"
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,13 +50,24 @@
             android:id="@+id/newAccountButton"
             android:layout_width="209dp"
             android:layout_height="49dp"
-            android:layout_marginBottom="128dp"
+            android:layout_marginTop="8dp"
             android:text="Create New Account"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginButton"
-            app:layout_constraintVertical_bias="0.277" />
+            app:layout_constraintVertical_bias="0.02" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:src="@drawable/studentswaplogo_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
