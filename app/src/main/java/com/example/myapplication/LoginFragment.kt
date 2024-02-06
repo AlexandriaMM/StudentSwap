@@ -41,11 +41,12 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
 
         val loginView = inflater.inflate(R.layout.fragment_login, container, false)
-        val bundle = Bundle()
-        bundle.putString("username", "password")
+
         loginView.findViewById<Button>(R.id.loginButton).setOnClickListener(View.OnClickListener {
             if(loginView.findViewById<EditText>(R.id.usernameText).text.toString() != "" &&
                 loginView.findViewById<EditText>(R.id.passwordText).text.toString() != "") {
+                val bundle = Bundle()
+                bundle.putString("username", loginView.findViewById<EditText>(R.id.usernameText).text.toString())
                 Navigation.findNavController(loginView).navigate(R.id.mainMenuFragment, bundle)
             }
             else {
@@ -55,8 +56,6 @@ class LoginFragment : Fragment() {
         loginView.findViewById<Button>(R.id.newAccountButton).setOnClickListener(View.OnClickListener {
             Navigation.findNavController(loginView).navigate(R.id.createAccountFragment)
         })
-
-
 
         return loginView
     }

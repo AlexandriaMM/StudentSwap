@@ -10,49 +10,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="140dp"
-            android:layout_height="58dp"
-            android:layout_marginTop="68dp"
-            android:text="Options"
-            android:textAlignment="center"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
         <Button
-            android:id="@+id/button3"
-            android:layout_width="177dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="44dp"
+            android:id="@+id/newListingButton"
+            android:layout_width="267dp"
+            android:layout_height="94dp"
+            android:layout_marginTop="76dp"
             android:text="Create New Listing"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/welcomeUserText" />
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="177dp"
-            android:layout_height="51dp"
+            android:id="@+id/viewLocalListingButton"
+            android:layout_width="267dp"
+            android:layout_height="94dp"
+            android:clickable="false"
             android:text="View Local Listings"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            app:layout_constraintTop_toBottomOf="@+id/newListingButton" />
 
         <Button
-            android:id="@+id/button5"
-            android:layout_width="177dp"
-            android:layout_height="51dp"
+            android:id="@+id/viewMyListingsButton"
+            android:layout_width="267dp"
+            android:layout_height="94dp"
             android:text="View My Listings"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4" />
+            app:layout_constraintTop_toBottomOf="@+id/viewLocalListingButton" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/welcomeUserText"
             android:layout_width="272dp"
             android:layout_height="63dp"
             android:layout_marginTop="100dp"
