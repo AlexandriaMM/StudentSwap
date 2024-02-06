@@ -44,8 +44,8 @@ class LoginFragment : Fragment() {
         val bundle = Bundle()
         bundle.putString("username", "password")
         loginView.findViewById<Button>(R.id.loginButton).setOnClickListener(View.OnClickListener {
-            if(loginView.findViewById<EditText>(R.id.usernameText).text.toString() != null &&
-                loginView.findViewById<EditText>(R.id.passwordText).text.toString() != null) {
+            if(loginView.findViewById<EditText>(R.id.usernameText).text.toString() != "" &&
+                loginView.findViewById<EditText>(R.id.passwordText).text.toString() != "") {
                 Navigation.findNavController(loginView).navigate(R.id.mainMenuFragment, bundle)
             }
             else {
